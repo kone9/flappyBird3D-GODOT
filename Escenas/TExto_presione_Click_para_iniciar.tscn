@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://escenasImportadas/textoInicio/Presione_click_para_iniciar.dae" type="PackedScene" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "iluminar_texto"
+length = 8.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Text:mesh:surface_1/material:emission")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 2, 2.8, 3.9, 4.9, 5.9, 7.9 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 1, 0.352941, 0, 1 ), Color( 0.811765, 0.792157, 0, 1 ), Color( 0.494118, 0.0117647, 0.0117647, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ) ]
+}
+
+[sub_resource type="Animation" id=2]
+resource_name = "movimiento_texto"
+length = 3.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("Text:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 5, 0 ), Vector3( 0, -5, 0 ), Vector3( 0, 0, 0 ) ]
+}
+
+[sub_resource type="AnimationNodeAdd2" id=3]
+
+[sub_resource type="AnimationNodeAnimation" id=4]
+animation = "movimiento_texto"
+
+[sub_resource type="AnimationNodeAnimation" id=5]
+animation = "iluminar_texto"
+
+[sub_resource type="AnimationNodeBlendTree" id=6]
+graph_offset = Vector2( 38, -24 )
+nodes/Add2/node = SubResource( 3 )
+nodes/Add2/position = Vector2( 400, 100 )
+nodes/Animation/node = SubResource( 5 )
+nodes/Animation/position = Vector2( 140, 80 )
+"nodes/Animation 2/node" = SubResource( 4 )
+"nodes/Animation 2/position" = Vector2( 140, 220 )
+nodes/output/position = Vector2( 600, 200 )
+node_connections = [ "output", 0, "Add2", "Add2", 0, "Animation", "Add2", 1, "Animation 2" ]
+
+[node name="Presione_click_para_iniciar" instance=ExtResource( 1 )]
+
+[node name="Text" parent="." index="0"]
+transform = Transform( 0.999984, 0, -0.00569847, 0, 1, 0, 0.00569847, 0, 0.999984, 0, 0, 0 )
+
+[node name="AnimationPlayer" parent="." index="1"]
+autoplay = "iluminar_texto"
+anims/iluminar_texto = SubResource( 1 )
+anims/movimiento_texto = SubResource( 2 )
+
+[node name="AnimationTree" type="AnimationTree" parent="." index="2"]
+tree_root = SubResource( 6 )
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/Add2/add_amount = 1.0
+

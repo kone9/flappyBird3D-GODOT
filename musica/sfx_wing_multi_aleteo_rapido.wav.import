@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/sfx_wing_multi_aleteo_rapido.wav-95e71034494a7aa84f2b701b80e7f824.sample"
+
+[deps]
+
+source_file="res://musica/sfx_wing_multi_aleteo_rapido.wav"
+dest_files=[ "res://.import/sfx_wing_multi_aleteo_rapido.wav-95e71034494a7aa84f2b701b80e7f824.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=false
+compress/mode=0

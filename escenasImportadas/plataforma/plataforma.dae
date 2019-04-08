@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<COLLADA xmlns="http://www.collada.org/2005/11/COLLADASchema" version="1.4.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <asset>
+    <contributor>
+      <author>Blender User</author>
+      <authoring_tool>Blender 2.80.49 commit date:2019-03-16, commit time:02:58, hash:dbfbd6b9043d</authoring_tool>
+    </contributor>
+    <created>2019-03-17T19:04:45</created>
+    <modified>2019-03-17T19:04:45</modified>
+    <unit name="meter" meter="1"/>
+    <up_axis>Z_UP</up_axis>
+  </asset>
+  <library_effects>
+    <effect id="Columna-effect">
+      <profile_COMMON>
+        <newparam sid="floor_pebbles_01_diff_1k_jpg-surface">
+          <surface type="2D">
+            <init_from>floor_pebbles_01_diff_1k_jpg</init_from>
+          </surface>
+        </newparam>
+        <newparam sid="floor_pebbles_01_diff_1k_jpg-sampler">
+          <sampler2D>
+            <source>floor_pebbles_01_diff_1k_jpg-surface</source>
+          </sampler2D>
+        </newparam>
+        <technique sid="common">
+          <lambert>
+            <diffuse>
+              <texture texture="floor_pebbles_01_diff_1k_jpg-sampler" texcoord="UVMap"/>
+            </diffuse>
+            <reflectivity>
+              <float sid="specular">0.5</float>
+            </reflectivity>
+          </lambert>
+        </technique>
+      </profile_COMMON>
+    </effect>
+  </library_effects>
+  <library_images>
+    <image id="floor_pebbles_01_diff_1k_jpg" name="floor_pebbles_01_diff_1k_jpg">
+      <init_from>floor_pebbles_01_diff_1k.jpg</init_from>
+    </image>
+  </library_images>
+  <library_materials>
+    <material id="Columna-material" name="Columna">
+      <instance_effect url="#Columna-effect"/>
+    </material>
+  </library_materials>
+  <library_geometries>
+    <geometry id="Cube_002-mesh" name="Cube.002">
+      <mesh>
+        <source id="Cube_002-mesh-positions">
+          <float_array id="Cube_002-mesh-positions-array" count="48">-23.03298 -42.0975 0.1532889 -23.03298 -42.0975 0.7067982 -22.74941 -42.0975 0.5509335 -22.8912 -42.0975 0.7067982 21.08298 -42.0975 0.1532889 21.08298 -42.0975 0.7067982 20.79941 -42.0975 0.5509335 20.9412 -42.0975 0.7067982 -22.21843 697.4755 0.40532 -22.21843 697.4755 0.5879781 -21.94533 11997.48 0.5365428 -22.08188 279.4755 0.5879781 20.26843 279.4755 0.40532 20.26843 279.4755 0.5879781 19.99533 11997.48 0.5365428 20.13188 279.4755 0.5879781</float_array>
+          <technique_common>
+            <accessor source="#Cube_002-mesh-positions-array" count="16" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_002-mesh-normals">
+          <float_array id="Cube_002-mesh-normals-array" count="36">0.0578376 -5.05604e-6 -0.998326 0.9999969 0.002533018 0 0 3.69492e-4 1 -0.05783814 -5.05611e-6 -0.998326 0 1.19529e-6 1 0 3.69492e-4 1 -0.9999995 0.001101374 0 0.739723 -0.00161302 0.6729096 0.9999969 0.002533018 0 0.1117974 3.65203e-5 0.9937311 -0.739723 -0.00161302 0.6729096 -0.9999994 0.001101374 0</float_array>
+          <technique_common>
+            <accessor source="#Cube_002-mesh-normals-array" count="12" stride="3">
+              <param name="X" type="float"/>
+              <param name="Y" type="float"/>
+              <param name="Z" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <source id="Cube_002-mesh-map-0">
+          <float_array id="Cube_002-mesh-map-0-array" count="84">0.7037134 195.2173 0.7037136 195.2011 0.7037159 -194.2376 -0.7000996 195.201 -0.7000996 195.201 -0.7000996 195.201 0.7037134 195.2173 0.7036914 195.2011 0.703701 195.2011 -0.7000996 195.201 -0.7000996 195.201 -0.6529594 -194.2377 -0.6529594 -194.2377 0.7037136 195.2011 -0.7000996 195.201 -0.7000996 195.201 -0.7000996 195.201 -0.7000996 195.201 0.7036914 195.2011 0.703665 195.2377 0.7036582 195.2011 0.7037134 195.2173 0.703701 195.2011 0.7037136 195.2011 -0.7000996 195.201 -0.7000996 195.201 -0.7000996 195.201 0.7037134 195.2173 0.7036739 195.2377 0.7036914 195.2011 -0.7000996 195.201 -0.7000996 195.201 -0.7000996 195.201 -0.6529594 -194.2377 0.7037159 -194.2376 0.7037136 195.2011 -0.7000996 195.201 -0.7000996 195.201 -0.7000996 195.201 0.7036914 195.2011 0.7036739 195.2377 0.703665 195.2377</float_array>
+          <technique_common>
+            <accessor source="#Cube_002-mesh-map-0-array" count="42" stride="2">
+              <param name="S" type="float"/>
+              <param name="T" type="float"/>
+            </accessor>
+          </technique_common>
+        </source>
+        <vertices id="Cube_002-mesh-vertices">
+          <input semantic="POSITION" source="#Cube_002-mesh-positions"/>
+        </vertices>
+        <triangles material="Columna-material" count="14">
+          <input semantic="VERTEX" source="#Cube_002-mesh-vertices" offset="0"/>
+          <input semantic="NORMAL" source="#Cube_002-mesh-normals" offset="1"/>
+          <input semantic="TEXCOORD" source="#Cube_002-mesh-map-0" offset="2" set="0"/>
+          <p>11 0 0 2 0 1 10 0 2 12 1 3 5 1 4 4 1 5 11 2 6 1 2 7 3 2 8 6 3 9 15 3 10 14 3 11 14 4 12 2 4 13 6 4 14 7 5 15 13 5 16 15 5 17 1 6 18 8 6 19 0 6 20 11 7 21 3 7 22 2 7 23 12 8 24 13 8 25 5 8 26 11 9 27 9 9 28 1 9 29 6 10 30 7 10 31 15 10 32 14 4 33 10 4 34 2 4 35 7 2 36 5 2 37 13 2 38 1 11 39 9 11 40 8 11 41</p>
+        </triangles>
+      </mesh>
+    </geometry>
+  </library_geometries>
+  <library_visual_scenes>
+    <visual_scene id="terreno" name="terreno">
+      <node id="suelo" name="suelo" type="NODE">
+        <matrix sid="transform">1 0 0 1 0 1 0 0 0 0 1 0.2691066 0 0 0 1</matrix>
+        <instance_geometry url="#Cube_002-mesh" name="suelo">
+          <bind_material>
+            <technique_common>
+              <instance_material symbol="Columna-material" target="#Columna-material">
+                <bind_vertex_input semantic="UVMap" input_semantic="TEXCOORD" input_set="0"/>
+              </instance_material>
+            </technique_common>
+          </bind_material>
+        </instance_geometry>
+      </node>
+    </visual_scene>
+  </library_visual_scenes>
+  <scene>
+    <instance_visual_scene url="#terreno"/>
+  </scene>
+</COLLADA>

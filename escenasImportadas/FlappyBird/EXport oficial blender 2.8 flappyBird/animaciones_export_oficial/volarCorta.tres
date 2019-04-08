@@ -1,0 +1,48 @@
+[gd_resource type="Animation" format=2]
+
+[resource]
+resource_name = "volar"
+length = 0.2
+tracks/0/type = "transform"
+tracks/0/path = NodePath("RiggingPAJARO:brazo.R")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = PoolRealArray( 0, 1, 0, 0, 0, 0.439436, -1.05163e-006, -3.2712e-008, 0.898274, 1, 1, 1, 0.2, 1, 0, 0, 0, -0.475267, -1.85889e-006, 1.74118e-006, 0.879842, 1, 1, 1 )
+tracks/1/type = "transform"
+tracks/1/path = NodePath("RiggingPAJARO:brazo.L")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = PoolRealArray( 0, 1, 0, 0, 0, -0.49609, 4.17098e-007, -1.15604e-008, 0.868271, 1, 1, 1, 0.2, 1, 0, 0, 0, 0.356817, -3.18641e-007, -1.10535e-007, 0.934174, 1, 1, 1 )
+tracks/2/type = "transform"
+tracks/2/path = NodePath("RiggingPAJARO:ojo.R")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1 )
+tracks/3/type = "transform"
+tracks/3/path = NodePath("RiggingPAJARO:ojo.L")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.0166667, 1, 0, 0, 0, -0.000389048, -0.000389048, -1.51358e-007, 1, 1, 1, 1, 0.0333333, 1, 0, 0, 0, -0.00149634, -0.00149634, -2.23903e-006, 0.999998, 1, 1, 1, 0.05, 1, 0, 0, 0, -0.00323207, -0.00323207, -1.04464e-005, 0.99999, 1, 1, 1, 0.0833333, 1, 0, 0, 0, -0.00822949, -0.00822949, -6.77291e-005, 0.999932, 1, 1, 1 )
+tracks/4/type = "transform"
+tracks/4/path = NodePath("RiggingPAJARO:seja.L")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.0166667, 1, 0, 0, 0, 0, 0.000139879, 0, 1, 1, 1, 1, 0.0333333, 1, 0, 0, 0, 0, 0.000548324, 0, 1, 1, 1, 1, 0.05, 1, 0, 0, 0, 0, 0.00120855, 0, 0.999999, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0, 0.00210377, 0, 0.999998, 1, 1, 1, 0.1, 1, 0, 0, 0, 0, 0.00453205, 0, 0.99999, 1, 1, 1 )
+tracks/5/type = "transform"
+tracks/5/path = NodePath("RiggingPAJARO:seja.R")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/keys = PoolRealArray( 0, 1, 0, 0, 0, 0, 0, 0, 1, 1, 1, 1, 0.0166667, 1, 0, 0, 0, 0, 0.000188674, 0, 1, 1, 1, 1, 0.0333333, 1, 0, 0, 0, 0, 0.000734834, 0, 1, 1, 1, 1, 0.05, 1, 0, 0, 0, 0, 0.00160869, 0, 0.999999, 1, 1, 1, 0.0666667, 1, 0, 0, 0, 0, 0.00278045, 0, 0.999996, 1, 1, 1 )
+

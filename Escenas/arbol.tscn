@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://escenasImportadas/arbol/arbol.dae" type="PackedScene" id=1]
+
+[node name="arbol" instance=ExtResource( 1 )]
+

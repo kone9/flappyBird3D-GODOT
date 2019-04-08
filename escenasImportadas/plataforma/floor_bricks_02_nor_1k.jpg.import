@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/floor_bricks_02_nor_1k.jpg-8f7499e6c1d4941bc874989a792f68f0.s3tc.stex"
+path.etc="res://.import/floor_bricks_02_nor_1k.jpg-8f7499e6c1d4941bc874989a792f68f0.etc.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://escenasImportadas/plataforma/floor_bricks_02_nor_1k.jpg"
+dest_files=[ "res://.import/floor_bricks_02_nor_1k.jpg-8f7499e6c1d4941bc874989a792f68f0.s3tc.stex", "res://.import/floor_bricks_02_nor_1k.jpg-8f7499e6c1d4941bc874989a792f68f0.etc.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=1
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

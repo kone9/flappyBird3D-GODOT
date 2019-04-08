@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Escenas/flappybird.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Escenas/plataforma_chica.tscn" type="PackedScene" id=2]
+
+[node name="Escena_principal" type="Spatial"]
+
+[node name="nivel1" type="Spatial" parent="."]
+
+[node name="flappyBird" parent="nivel1" instance=ExtResource( 1 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7611, 0 )
+
+[node name="plataforma_chica" parent="nivel1" instance=ExtResource( 2 )]
+
