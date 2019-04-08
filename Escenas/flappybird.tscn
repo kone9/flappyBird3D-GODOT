@@ -167,6 +167,7 @@ shape = SubResource( 2 )
 
 [node name="CameraPrimeraPersona" type="Camera" parent="."]
 transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, -1.04175, 2.51609, 0.0451679 )
+current = true
 far = 5000.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

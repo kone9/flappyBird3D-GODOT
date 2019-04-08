@@ -1,14 +1,257 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=13 format=2]
 
-[ext_resource path="res://Escenas/flappybird.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Escenas/plataforma_chica.tscn" type="PackedScene" id=2]
+[ext_resource path="res://codigos/ControladorDelJuego.gd" type="Script" id=1]
+[ext_resource path="res://Escenas/flappybird.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Escenas/plataforma_chica.tscn" type="PackedScene" id=3]
+[ext_resource path="res://codigos/suelo.gd" type="Script" id=4]
+[ext_resource path="res://codigos/suelo2.gd" type="Script" id=5]
+[ext_resource path="res://codigos/suelo3.gd" type="Script" id=6]
+[ext_resource path="res://codigos/SerieColumnas.gd" type="Script" id=7]
+[ext_resource path="res://Escenas/Columnasotras.tscn" type="PackedScene" id=8]
+[ext_resource path="res://typografias/LuckiestGuy.ttf" type="DynamicFontData" id=9]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 5, 30.43, 5 )
+
+[sub_resource type="BoxShape" id=2]
+extents = Vector3( 5, 30.43, 5 )
+
+[sub_resource type="DynamicFont" id=3]
+font_data = ExtResource( 9 )
 
 [node name="Escena_principal" type="Spatial"]
 
 [node name="nivel1" type="Spatial" parent="."]
+script = ExtResource( 1 )
 
-[node name="flappyBird" parent="nivel1" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 51.7611, 0 )
+[node name="flappyBird" parent="nivel1" instance=ExtResource( 2 )]
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, 0, 95.7323, -169.521 )
 
-[node name="plataforma_chica" parent="nivel1" instance=ExtResource( 2 )]
+[node name="plataforma_chica" parent="nivel1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -38.2433, 0 )
+script = ExtResource( 4 )
 
+[node name="plataforma_chica2" parent="nivel1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -38.2433, -1000 )
+script = ExtResource( 5 )
+
+[node name="plataforma_chica3" parent="nivel1" instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -38.2433, -2000 )
+script = ExtResource( 6 )
+
+[node name="columnas" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -400 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 1 )
+
+[node name="columnas2" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -600 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas2" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas2" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas2/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 2 )
+
+[node name="columnas3" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -800 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas3" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas3" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas3/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 2 )
+
+[node name="columnas4" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -1000 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas4" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas4" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas4/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 2 )
+
+[node name="columnas5" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -1200 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas5" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas5" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas5" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas5/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 2 )
+
+[node name="columnas6" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -1400 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas6" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas6" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas6" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas6/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 2 )
+
+[node name="columnas7" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -1600 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas7" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas7" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas7" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas7/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 2 )
+
+[node name="columnas8" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -1800 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas8" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas8" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas8" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas8/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 2 )
+
+[node name="columnas9" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -2000 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas9" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas9" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas9" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas9/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 2 )
+
+[node name="columnas10" type="Spatial" parent="nivel1"]
+editor/display_folded = true
+transform = Transform( -4.37114e-008, 0, 1, 0, 1, 0, -1, 0, -4.37114e-008, -3.537, 150, -2200 )
+script = ExtResource( 7 )
+
+[node name="Columnas" parent="nivel1/columnas10" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -300, -3.384 )
+
+[node name="Columnas2" parent="nivel1/columnas10" instance=ExtResource( 8 )]
+transform = Transform( 1, 0, 0, 0, -1, 8.74228e-008, 0, -8.74228e-008, -1, 0, 115.7, -3.384 )
+
+[node name="Area" type="Area" parent="nivel1/columnas10" groups=[
+"puntaje",
+]]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -90, -6 )
+
+[node name="CollisionShape" type="CollisionShape" parent="nivel1/columnas10/Area"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 3 )
+shape = SubResource( 2 )
+
+[node name="puntos" type="Label" parent="nivel1"]
+margin_right = 75.0
+margin_bottom = 17.0
+custom_fonts/font = SubResource( 3 )
+text = "Puntos: 0"
+
+[connection signal="body_exited" from="nivel1/columnas/Area" to="nivel1/columnas" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="nivel1/columnas2/Area" to="nivel1/columnas2" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="nivel1/columnas3/Area" to="nivel1/columnas3" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="nivel1/columnas4/Area" to="nivel1/columnas4" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="nivel1/columnas5/Area" to="nivel1/columnas5" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="nivel1/columnas6/Area" to="nivel1/columnas6" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="nivel1/columnas7/Area" to="nivel1/columnas7" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="nivel1/columnas8/Area" to="nivel1/columnas8" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="nivel1/columnas9/Area" to="nivel1/columnas9" method="_on_Area_body_exited"]
+[connection signal="body_exited" from="nivel1/columnas10/Area" to="nivel1/columnas10" method="_on_Area_body_exited"]
