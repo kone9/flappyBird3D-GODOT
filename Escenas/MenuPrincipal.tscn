@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://codigos/MenuPrincipal.gd" type="Script" id=1]
-[ext_resource path="res://escenasImportadas/FlappyBird/EXport oficial blender 2.8 flappyBird/pajaro.material" type="Material" id=2]
-[ext_resource path="res://typografias/LuckiestGuy.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Escenas/TExto_presione_Click_para_iniciar.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Escenas/Escena_principal_lista.tscn" type="PackedScene" id=2]
+[ext_resource path="res://escenasImportadas/FlappyBird/EXport oficial blender 2.8 flappyBird/pajaro.material" type="Material" id=3]
+[ext_resource path="res://typografias/LuckiestGuy.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://Escenas/TExto_presione_Click_para_iniciar.tscn" type="PackedScene" id=5]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "PajaroFeliz"
@@ -14,7 +15,7 @@ surfaces/0 = {
 "blend_shape_data": [  ],
 "format": 97751,
 "index_count": 14016,
-"material": ExtResource( 2 ),
+"material": ExtResource( 3 ),
 "primitive": 4,
 "skeleton_aabb": [ AABB( -2.01742, -2.99643, -2.3, 5.23235, 5.69815, 4.6 ), AABB( -0.624622, -0.321348, -4.66476, 1.32257, 0.54391, 3.66476 ), AABB( -0.624622, -0.321348, 0, 1.32257, 0.54391, 4.66476 ), AABB( 0, 0, 0, 2.69433, 1.44542, 1.68875 ), AABB( 0, 0, -1.68875, 2.69433, 1.44542, 1.31844 ), AABB( 0, 0, 0, 2.0075, 1.95211, 1.53173 ), AABB( 0, 0, -1.53173, 2.0075, 1.95211, 0.956706 ) ],
 "vertex_count": 4189
@@ -22,7 +23,7 @@ surfaces/0 = {
 
 [sub_resource type="DynamicFont" id=2]
 size = 20
-font_data = ExtResource( 3 )
+font_data = ExtResource( 4 )
 
 [sub_resource type="ProceduralSky" id=3]
 
@@ -114,6 +115,7 @@ node_connections = [ "output", 0, "Blend2", "Blend2", 0, "Animation", "Blend2", 
 
 [node name="flappyBirdMenuInicio" type="Spatial"]
 script = ExtResource( 1 )
+escenaPrincipal = ExtResource( 2 )
 
 [node name="RiggingPAJARO" type="Skeleton" parent="."]
 transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, 0, 0, 0 )
@@ -175,7 +177,7 @@ __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Presione_click_para_iniciar" parent="." instance=ExtResource( 4 )]
+[node name="Presione_click_para_iniciar" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 8.52, 2.38, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]

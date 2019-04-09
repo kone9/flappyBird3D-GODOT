@@ -39,22 +39,22 @@ script = ExtResource( 1 )
 Y_maximo = 250.0
 
 [node name="flappyBird" parent="nivel1" instance=ExtResource( 2 )]
-transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 204.016, 95.7323, 1.94009 )
+transform = Transform( 2.5, 0, 0, 0, 2.5, 0, 0, 0, 2.5, 300, 95.7323, 1.94009 )
 
 [node name="CameraTerceraPersona" type="Camera" parent="nivel1"]
-transform = Transform( 0.380973, 0.235089, -0.894199, 0, 0.967135, 0.254264, 0.924586, -0.096868, 0.368453, 182.192, 108.099, 20.1366 )
+transform = Transform( 0.380973, 0.235089, -0.894199, 0, 0.967135, 0.254264, 0.924586, -0.0968678, 0.368452, 300, 108.099, 20.1366 )
 far = 5000.0
 script = ExtResource( 3 )
 
 [node name="CameraLateral" type="Camera" parent="nivel1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 239.432, 43.13, 152.267 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 300, 43.13, 152.267 )
 current = true
 far = 5000.0
 script = ExtResource( 4 )
 
 [node name="columnas" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 400, 200, 5.62061 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas" instance=ExtResource( 6 )]
@@ -74,7 +74,7 @@ shape = SubResource( 1 )
 
 [node name="columnas2" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 600, 200, 5.62062 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 800, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas2" instance=ExtResource( 6 )]
@@ -94,7 +94,7 @@ shape = SubResource( 2 )
 
 [node name="columnas3" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 800, 200, 5.62063 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas3" instance=ExtResource( 6 )]
@@ -114,7 +114,7 @@ shape = SubResource( 2 )
 
 [node name="columnas4" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1000, 200, 5.62064 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1200, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas4" instance=ExtResource( 6 )]
@@ -134,7 +134,7 @@ shape = SubResource( 2 )
 
 [node name="columnas5" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1200, 200, 5.62065 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1400, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas5" instance=ExtResource( 6 )]
@@ -154,7 +154,7 @@ shape = SubResource( 2 )
 
 [node name="columnas6" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1400, 200, 5.62065 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1600, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas6" instance=ExtResource( 6 )]
@@ -174,7 +174,7 @@ shape = SubResource( 2 )
 
 [node name="columnas7" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1600, 200, 5.62066 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1800, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas7" instance=ExtResource( 6 )]
@@ -194,7 +194,7 @@ shape = SubResource( 2 )
 
 [node name="columnas8" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1800, 200, 5.62067 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2000, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas8" instance=ExtResource( 6 )]
@@ -214,7 +214,7 @@ shape = SubResource( 2 )
 
 [node name="columnas9" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2000, 200, 5.62068 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2200, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas9" instance=ExtResource( 6 )]
@@ -234,7 +234,7 @@ shape = SubResource( 2 )
 
 [node name="columnas10" type="Spatial" parent="nivel1"]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2200, 200, 5.62069 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 2400, 200, 5.621 )
 script = ExtResource( 5 )
 
 [node name="Columnas" parent="nivel1/columnas10" instance=ExtResource( 6 )]
@@ -273,17 +273,16 @@ custom_fonts/font = SubResource( 3 )
 text = "Puntos: 0"
 
 [node name="Iluminacion" type="Spatial" parent="."]
-editor/display_folded = true
-
-[node name="ReflectionProbe" type="ReflectionProbe" parent="Iluminacion"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 22.419, -1219.92 )
-extents = Vector3( 64.2617, 123.008, 1242.85 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Iluminacion"]
 transform = Transform( 0.254001, 0.967204, -3.02793e-008, -0.639744, 0.168006, 0.750001, 0.725404, -0.190501, 0.661436, 0, 188.944, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Iluminacion"]
 environment = SubResource( 5 )
+
+[node name="ReflectionProbe" type="ReflectionProbe" parent="Iluminacion"]
+transform = Transform( -0.00305714, 0, -0.999995, 0, 1, 0, 0.999995, 0, -0.00305714, 1219.91, 98.1173, 3.72946 )
+extents = Vector3( 64.2617, 123.008, 1242.85 )
 
 [node name="VFX_Musica" type="Node" parent="."]
 editor/display_folded = true
