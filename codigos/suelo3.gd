@@ -8,8 +8,8 @@ func _ready():
 
 
 func _process(delta):
-	if get_parent().get_parent().gameOver == false:
-		translation.x = translation.x + get_parent().get_parent().velocidadDesplazamientoX * delta
+	if get_parent().gameOver == false:
+		translation.x = translation.x + get_parent().velocidadDesplazamientoX * delta
 		if translation.x <= -1000:
 			reposicionarSuelo()
 

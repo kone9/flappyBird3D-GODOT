@@ -26,7 +26,6 @@ func _ready():
 func _process(delta):
 	if gameOver == false:
 		$puntos.set_text("Puntos : " + str(puntuacion)) #cambio el texto de puntos y los suma
-		$pu
 		estadoPuntuacion()
 
 func estadoPuntuacion():
