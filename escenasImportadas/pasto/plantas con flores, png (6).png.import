@@ -1,0 +1,36 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path.s3tc="res://.import/plantas con flores, png (6).png-1f6c533e2dc096b46a9acde7ffb58f3d.s3tc.stex"
+path.etc="res://.import/plantas con flores, png (6).png-1f6c533e2dc096b46a9acde7ffb58f3d.etc.stex"
+metadata={
+"imported_formats": [ "s3tc", "etc" ],
+"vram_texture": true
+}
+
+[deps]
+
+source_file="res://escenasImportadas/pasto/plantas con flores, png (6).png"
+dest_files=[ "res://.import/plantas con flores, png (6).png-1f6c533e2dc096b46a9acde7ffb58f3d.s3tc.stex", "res://.import/plantas con flores, png (6).png-1f6c533e2dc096b46a9acde7ffb58f3d.etc.stex" ]
+
+[params]
+
+compress/mode=2
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=true
+flags/filter=true
+flags/mipmaps=true
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=false
+svg/scale=1.0

@@ -1,10 +1,11 @@
-[gd_scene load_steps=16 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://codigos/MenuPrincipal.gd" type="Script" id=1]
 [ext_resource path="res://Escenas/Escena_principal_lista.tscn" type="PackedScene" id=2]
 [ext_resource path="res://escenasImportadas/FlappyBird/EXport oficial blender 2.8 flappyBird/pajaro.material" type="Material" id=3]
 [ext_resource path="res://typografias/LuckiestGuy.ttf" type="DynamicFontData" id=4]
 [ext_resource path="res://Escenas/TExto_presione_Click_para_iniciar.tscn" type="PackedScene" id=5]
+[ext_resource path="res://musica/POL-snowy-hill-short.wav" type="AudioStream" id=6]
 
 [sub_resource type="ArrayMesh" id=1]
 resource_name = "PajaroFeliz"
@@ -30,7 +31,7 @@ font_data = ExtResource( 4 )
 [sub_resource type="Environment" id=4]
 background_mode = 3
 background_sky = SubResource( 3 )
-background_color = Color( 0.396078, 0.266667, 0.266667, 1 )
+background_color = Color( 0.0509804, 0.054902, 0.180392, 1 )
 ambient_light_color = Color( 0.894118, 0.894118, 0.894118, 1 )
 ambient_light_energy = 1.39
 fog_enabled = true
@@ -113,6 +114,9 @@ nodes/Blend2/position = Vector2( 340, 160 )
 nodes/output/position = Vector2( 540, 160 )
 node_connections = [ "output", 0, "Blend2", "Blend2", 0, "Animation", "Blend2", 1, "Animation 2" ]
 
+[sub_resource type="Animation" id=11]
+resource_name = "menuPrincipal"
+
 [node name="flappyBirdMenuInicio" type="Spatial"]
 script = ExtResource( 1 )
 escenaPrincipal = ExtResource( 2 )
@@ -165,10 +169,13 @@ material/0 = null
 transform = Transform( 0.696, 0, 0.718041, 0, 1, 0, -0.718041, 0, 0.696, 12.154, 1.6, 5.718 )
 
 [node name="Label" type="Label" parent="."]
-margin_left = 117.648
-margin_top = 548.071
-margin_right = 716.648
-margin_bottom = 633.071
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = -299.5
+margin_top = -85.0
+margin_right = 299.5
 custom_fonts/font = SubResource( 2 )
 text = "flappy bird 3D por Ariel Gimenez 
 con godot Game Engine"
@@ -192,4 +199,11 @@ tree_root = SubResource( 10 )
 anim_player = NodePath("../AnimationPlayer")
 active = true
 parameters/Blend2/blend_amount = 1.0
+
+[node name="musica_menu" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
+autoplay = true
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="."]
+anims/menuPrincipal = SubResource( 11 )
 

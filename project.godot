@@ -19,11 +19,6 @@ config/name="FlappyBird3D"
 run/main_scene="res://Escenas/MenuPrincipal.tscn"
 config/icon="res://flappybird blender cycles 2.8.png"
 
-[display]
-
-window/size/width=800
-window/stretch/aspect="keep"
-
 [input]
 
 clickIzquierdo={

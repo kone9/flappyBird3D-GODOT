@@ -25,46 +25,69 @@ func _ready():
 
 func _process(delta):
 	if gameOver == false:
+		$GameOverFInal.visible = false
 		$puntos.set_text("Puntos : " + str(puntuacion)) #cambio el texto de puntos y los suma
-		estadoPuntuacion()
+		estadoPuntuacion() #estado de la puntuacion
+		camaraActual() #camara actual
+		
+	if gameOver == true:
+		$puntos.visible = false
+		$GameOverFInal/puntos2.set_text("Puntos : " + str(puntuacion))
+		yield(get_tree().create_timer(0.2),"timeout")
+		$GameOverFInal.visible = true
+		$AnimationPlayer.play("ColorGameOverYpuntuacion")
+		
+
+func camaraActual(): #camara actual no esta terminado pensar en la solucion.
+	if (puntuacion - puntuacion) == 5:
+		camaraTerceraPersona()
+	if ((puntuacion + 10) - puntuacion) == 10:
+		camaraPrimeraPersona()
+	if ((puntuacion + 15) - puntuacion) == 15:
+		camaraLateral()
+		
+		
+	
+	
+
 
 func estadoPuntuacion():
 	if puntuacion >= 5: #si puntuacion es mayor a 5
 		velocidadDesplazamientoX = -55 #al bajar sube la velocidad de desplazamiento
-		camaraPrimeraPersona() #camara es la de primera persona
+		#camaraPrimeraPersona() #camara es la de primera persona
 	if puntuacion >= 10:
 		velocidadDesplazamientoX = -60
-		camaraTerceraPersona()
+		#camaraTerceraPersona()
 	if puntuacion >= 15:
 		velocidadDesplazamientoX = -65
-		camaraLateral()
+		#camaraLateral()
 	if puntuacion >= 20:
 		velocidadDesplazamientoX = -70
-		camaraPrimeraPersona()
+		#camaraPrimeraPersona()
 	if puntuacion >= 30:
 		velocidadDesplazamientoX = -75
-		camaraTerceraPersona()
+		#camaraTerceraPersona()
 	if puntuacion >= 60:
 		velocidadDesplazamientoX = -80
-		camaraLateral()
+		#camaraLateral()
 	if puntuacion >= 100:
 		velocidadDesplazamientoX = -85
-		camaraPrimeraPersona()
+		#camaraPrimeraPersona()
 	if puntuacion >= 200:
 		velocidadDesplazamientoX = -90
-		camaraTerceraPersona()
+		#camaraTerceraPersona()
 	if puntuacion >= 250:
 		velocidadDesplazamientoX = -95
-		camaraLateral()
+		#camaraLateral()
 	if puntuacion >= 300:
 		velocidadDesplazamientoX = -100
-		camaraPrimeraPersona()
+		#camaraPrimeraPersona()
 	if puntuacion >= 1000:
 		velocidadDesplazamientoX = -110
-		camaraTerceraPersona()
+		#camaraTerceraPersona()
 	if puntuacion >= 2000:
 		velocidadDesplazamientoX = -120
-		camaraPrimeraPersona()
+		#camaraPrimeraPersona()
 		
 		
 		

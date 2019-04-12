@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/POL-around-the-world-short.wav-0a96d64d3433cb558e982bbd5e8b29f9.sample"
+
+[deps]
+
+source_file="res://musica/POL-around-the-world-short.wav"
+dest_files=[ "res://.import/POL-around-the-world-short.wav-0a96d64d3433cb558e982bbd5e8b29f9.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=true
+edit/normalize=true
+edit/loop=true
+compress/mode=0

@@ -25,6 +25,7 @@ func _physics_process(delta):
 			get_tree().reload_current_scene()
 			get_parent().gameOver == false	
 			$AnimationTree.active = false
+			
 		
 func _on_Area_area_entered(area):
 	if area.is_in_group("suelo"): #si toca el suelo

@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://codigos/ControladorDelJuego.gd" type="Script" id=1]
 [ext_resource path="res://Escenas/flappybird.tscn" type="PackedScene" id=2]
@@ -22,8 +22,48 @@ extents = Vector3( 5, 30.43, 5 )
 extents = Vector3( 5, 30.43, 5 )
 
 [sub_resource type="DynamicFont" id=3]
-size = 50
+size = 40
 font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 100
+font_data = ExtResource( 9 )
+
+[sub_resource type="DynamicFont" id=7]
+size = 30
+font_data = ExtResource( 9 )
+
+[sub_resource type="Animation" id=8]
+resource_name = "ColorGameOverYpuntuacion"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("GameOverFInal:custom_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0.407843, 0.407843, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("GameOverFInal/TextoClickreiniciar:custom_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 0.580392, 0.576471, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.580392, 0.576471, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=9]
+resource_name = "posicion_textos"
+length = 5.0
 
 [sub_resource type="PanoramaSky" id=4]
 panorama = ExtResource( 10 )
@@ -265,14 +305,63 @@ transform = Transform( -4.37114e-008, 0, -1, 0, 1, 0, 1, 0, -4.37114e-008, 2000,
 script = ExtResource( 8 )
 
 [node name="puntos" type="Label" parent="nivel1"]
-margin_left = 18.093
-margin_top = 15.5083
-margin_right = 252.093
-margin_bottom = 66.5083
+anchor_bottom = 0.74
+margin_left = 15.0
+margin_top = 15.0
+margin_right = 201.0
+margin_bottom = 171.0
 custom_fonts/font = SubResource( 3 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Puntos: 0"
 
+[node name="GameOverFInal" type="Label" parent="nivel1" groups=[
+"gameovertext",
+]]
+editor/display_folded = true
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -259.0
+margin_top = -233.49
+margin_right = 259.0
+margin_bottom = 117.01
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 1, 0.787043, 0.787043, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "GameOver"
+align = 1
+
+[node name="TextoClickreiniciar" type="Label" parent="nivel1/GameOverFInal"]
+margin_left = 107.532
+margin_top = 86.5943
+margin_right = 593.532
+margin_bottom = 137.594
+custom_fonts/font = SubResource( 7 )
+custom_colors/font_color = Color( 0.731295, 0.728784, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Click para reiniciar"
+
+[node name="puntos2" type="Label" parent="nivel1/GameOverFInal"]
+margin_left = 155.443
+margin_top = 124.304
+margin_right = 389.444
+margin_bottom = 175.304
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
+custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
+text = "Puntos: 0"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="nivel1"]
+anims/ColorGameOverYpuntuacion = SubResource( 8 )
+anims/posicion_textos = SubResource( 9 )
+
 [node name="Iluminacion" type="Spatial" parent="."]
+editor/display_folded = true
 
 [node name="DirectionalLight" type="DirectionalLight" parent="Iluminacion"]
 transform = Transform( 0.254001, 0.967204, -3.02793e-008, -0.639744, 0.168006, 0.750001, 0.725404, -0.190501, 0.661436, 0, 188.944, 0 )
@@ -291,12 +380,14 @@ editor/display_folded = true
 "puntos",
 ]]
 stream = ExtResource( 11 )
+bus = "puntos"
 
 [node name="musica" type="AudioStreamPlayer" parent="VFX_Musica" groups=[
 "musica",
 ]]
 stream = ExtResource( 12 )
 autoplay = true
+bus = "musica"
 
 [node name="volar" type="AudioStreamPlayer" parent="VFX_Musica" groups=[
 "volar",
