@@ -25,15 +25,15 @@ extents = Vector3( 5, 30.43, 5 )
 size = 40
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=6]
+[sub_resource type="DynamicFont" id=4]
 size = 100
 font_data = ExtResource( 9 )
 
-[sub_resource type="DynamicFont" id=7]
+[sub_resource type="DynamicFont" id=5]
 size = 30
 font_data = ExtResource( 9 )
 
-[sub_resource type="Animation" id=8]
+[sub_resource type="Animation" id=6]
 resource_name = "ColorGameOverYpuntuacion"
 loop = true
 tracks/0/type = "value"
@@ -61,16 +61,16 @@ tracks/1/keys = {
 "values": [ Color( 0.580392, 0.576471, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0.580392, 0.576471, 1, 1 ) ]
 }
 
-[sub_resource type="Animation" id=9]
+[sub_resource type="Animation" id=7]
 resource_name = "posicion_textos"
 length = 5.0
 
-[sub_resource type="PanoramaSky" id=4]
+[sub_resource type="PanoramaSky" id=8]
 panorama = ExtResource( 10 )
 
-[sub_resource type="Environment" id=5]
+[sub_resource type="Environment" id=9]
 background_mode = 2
-background_sky = SubResource( 4 )
+background_sky = SubResource( 8 )
 
 [node name="Escena_principal" type="Spatial"]
 
@@ -327,7 +327,7 @@ margin_left = -259.0
 margin_top = -233.49
 margin_right = 259.0
 margin_bottom = 117.01
-custom_fonts/font = SubResource( 6 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 1, 0.787043, 0.787043, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -339,7 +339,7 @@ margin_left = 107.532
 margin_top = 86.5943
 margin_right = 593.532
 margin_bottom = 137.594
-custom_fonts/font = SubResource( 7 )
+custom_fonts/font = SubResource( 5 )
 custom_colors/font_color = Color( 0.731295, 0.728784, 1, 1 )
 custom_colors/font_outline_modulate = Color( 0, 0, 0, 1 )
 custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
@@ -357,8 +357,8 @@ custom_colors/font_color_shadow = Color( 0, 0, 0, 1 )
 text = "Puntos: 0"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="nivel1"]
-anims/ColorGameOverYpuntuacion = SubResource( 8 )
-anims/posicion_textos = SubResource( 9 )
+anims/ColorGameOverYpuntuacion = SubResource( 6 )
+anims/posicion_textos = SubResource( 7 )
 
 [node name="Iluminacion" type="Spatial" parent="."]
 editor/display_folded = true
@@ -367,7 +367,7 @@ editor/display_folded = true
 transform = Transform( 0.254001, 0.967204, -3.02793e-008, -0.639744, 0.168006, 0.750001, 0.725404, -0.190501, 0.661436, 0, 188.944, 0 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Iluminacion"]
-environment = SubResource( 5 )
+environment = SubResource( 9 )
 
 [node name="ReflectionProbe" type="ReflectionProbe" parent="Iluminacion"]
 transform = Transform( -0.00305714, 0, -0.999995, 0, 1, 0, 0.999995, 0, -0.00305714, 1219.91, 98.1173, 3.72946 )

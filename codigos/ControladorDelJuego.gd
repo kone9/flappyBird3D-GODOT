@@ -11,16 +11,18 @@ export (float) var escala_de_gravedad_al_morir = 50
 #export var distancia_entre_columnas = 5
 
 
-
+var estadocamara = [] #el primero es la camara 1,el segundo es la camara 2,el tercero es la camara 3	
 var puntuacion = 0 #puntuacion inicial
 var gameOver = false #el juego puede comenzar gameOver es falso
+
+
  
 
 
 func _ready():
 	randomize() #esto crea una semilla aleatoria para cada inicio de programa
 	valores_Iniciales_de_las_columnas() #llamo a la funcion valores Iniciales de las columnas
-	
+	estadocamara= [true,false,false]
 	
 
 func _process(delta):
@@ -39,12 +41,25 @@ func _process(delta):
 		
 
 func camaraActual(): #camara actual no esta terminado pensar en la solucion.
-	if (puntuacion - puntuacion) == 5:
+
+	if (puntuacion % 5) == 0 and estadocamara[0] == true:
+		print("entre a camaraTerceraPersona")
 		camaraTerceraPersona()
-	if ((puntuacion + 10) - puntuacion) == 10:
+		estadocamara= [false,true,false]
+	
+	if (puntuacion % 5) == 0 and estadocamara[1] == true:
+		print("entre a camaraPrimeraPersona")
 		camaraPrimeraPersona()
-	if ((puntuacion + 15) - puntuacion) == 15:
+		estadocamara= [false,false,true]
+	
+	if (puntuacion % 5) == 0 and estadocamara[2] == true:
+		print("entre a camara lateral")
 		camaraLateral()
+		estadocamara= [true,false,false]
+
+		
+		
+	
 		
 		
 	
