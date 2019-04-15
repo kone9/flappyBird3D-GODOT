@@ -10,9 +10,10 @@ export (float) var escala_de_gravedad_al_morir = 50
 #export var cantidadDeColumnas = 5
 #export var distancia_entre_columnas = 5
 
+export (int) var puntuacion = 0 #puntuacion inicial
+export (int) var contador_de_la_tipo_camara = 0 #contador para cambiar de camara
 
 var estadocamara = [] #el primero es la camara 1,el segundo es la camara 2,el tercero es la camara 3	
-var puntuacion = 0 #puntuacion inicial
 var gameOver = false #el juego puede comenzar gameOver es falso
 
 
@@ -32,30 +33,44 @@ func _process(delta):
 		estadoPuntuacion() #estado de la puntuacion
 		camaraActual() #camara actual
 		
-	if gameOver == true:
-		$puntos.visible = false
-		$GameOverFInal/puntos2.set_text("Puntos : " + str(puntuacion))
-		yield(get_tree().create_timer(0.2),"timeout")
-		$GameOverFInal.visible = true
-		$AnimationPlayer.play("ColorGameOverYpuntuacion")
+	if gameOver == true: #si game over es verdadero
+		yield(get_tree().create_timer(0.5),"timeout") #esperar dos milisemas antes de reiniciar
+		$puntos.visible = false #puntos invisibles
+		$GameOverFInal/puntos2.set_text("Puntos : " + str(puntuacion)) #sumo los puntos
+		$AnimationPlayer.play("ColorGameOverYpuntuacion") #play al animation player
+		$GameOverFInal.visible = true #texto gameover visible
+
+		
 		
 
-func camaraActual(): #camara actual no esta terminado pensar en la solucion.
+		
 
-	if (puntuacion % 5) == 0 and estadocamara[0] == true:
+func camaraActual():
+	
+	if contador_de_la_tipo_camara == 5:
 		print("entre a camaraTerceraPersona")
 		camaraTerceraPersona()
 		estadocamara= [false,true,false]
-	
-	if (puntuacion % 5) == 0 and estadocamara[1] == true:
+		
+	if contador_de_la_tipo_camara == 10:
 		print("entre a camaraPrimeraPersona")
 		camaraPrimeraPersona()
 		estadocamara= [false,false,true]
-	
-	if (puntuacion % 5) == 0 and estadocamara[2] == true:
+
+	if contador_de_la_tipo_camara == 15:
 		print("entre a camara lateral")
 		camaraLateral()
 		estadocamara= [true,false,false]
+		if contador_de_la_tipo_camara == 15:
+			contador_de_la_tipo_camara = 0
+			print("el valor de la contador camara es: ", contador_de_la_tipo_camara)
+	
+	
+		
+	
+	
+	
+	
 
 		
 		

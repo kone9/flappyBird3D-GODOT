@@ -17,7 +17,7 @@ func _process(delta):
 		
 		
 func _on_Area_body_exited(body):
-	if body.is_in_group("pajaro") and get_parent().gameOver == false:
-		get_parent().puntuacion = get_parent().puntuacion + 1
-		get_tree().get_nodes_in_group("puntos")[0].play()
-		print(get_parent().estadocamara)
+	if body.is_in_group("pajaro") and get_parent().gameOver == false: #si esta en el grupo pajaro y no es game over
+		get_parent().puntuacion = get_parent().puntuacion + 1 ##sumo puntacion
+		get_tree().get_nodes_in_group("puntos")[0].play() #activo sonido puntos 
+		get_parent().contador_de_la_tipo_camara = get_parent().contador_de_la_tipo_camara + 1 #sumo puntos al contador para cambiar de camara

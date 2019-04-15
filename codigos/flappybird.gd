@@ -19,12 +19,14 @@ func _physics_process(delta):
 			#yield(get_tree().create_timer(0.9),"timeout") #detiene el script por 1 segundo para que no se reprodusca la animacion a cada rato
 			#puedeAletear = true #recien ahora despues de los 5 segundospuede aletear denuevo
 			#angular_velocity.z =0.3
-	if get_parent().gameOver == true:	
-		$AnimationTree.active = false
-		if Input.is_action_just_pressed("clickIzquierdo"):
-			get_tree().reload_current_scene()
-			get_parent().gameOver == false	
-			$AnimationTree.active = false
+	
+	if get_parent().gameOver == true: #si es game over	
+		$AnimationTree.active = false #deja de reproducr animacion
+		yield(get_tree().create_timer(0.8),"timeout") #esperar dos milisemas antes de reiniciar
+		if Input.is_action_just_pressed("clickIzquierdo"): #si presiono click
+			get_tree().reload_current_scene() #reinicio la escena
+			get_parent().gameOver == false	#game over false
+			$AnimationTree.active = false #reinicio animacion volar
 			
 		
 func _on_Area_area_entered(area):
@@ -35,14 +37,8 @@ func _on_Area_area_entered(area):
 			print("esta muerto")
 			gravity_scale = get_parent().escala_de_gravedad_al_morir #aumenta gravedad al morir
 			get_tree().get_nodes_in_group("musica")[0].stop() #paro la musica
-		
-	if area.is_in_group("techo"):#si toca el techo
-		if get_parent().gameOver == false: #si game over es igual a falso
-			get_tree().get_nodes_in_group("hit")[0].play()  #sonido golpe
-			get_parent().gameOver = true #game over igual verdadero
-			print("esta muerto")
-			gravity_scale = get_parent().escala_de_gravedad_al_morir  #aumenta gravedad al morir
-			get_tree().get_nodes_in_group("musica")[0].stop() #paro la musica
+			yield(get_tree().create_timer(0.2),"timeout")#espero milisegundos hasta activar sonido pajaro
+			get_tree().get_nodes_in_group("Sonido_pajaro")[0].play() #sonido pajaro golpeado
 			
 	if area.is_in_group("columnas"):
 		if get_parent().gameOver == false: 
@@ -51,5 +47,7 @@ func _on_Area_area_entered(area):
 			print("esta muerto")	
 			gravity_scale = get_parent().escala_de_gravedad_al_morir
 			get_tree().get_nodes_in_group("musica")[0].stop() #paro la musica
-
+			yield(get_tree().create_timer(0.2),"timeout")#espero milisegundos hasta activar sonido pajaro
+			get_tree().get_nodes_in_group("Sonido_pajaro")[0].play() #sonido pajaro golpeado
+		
 
