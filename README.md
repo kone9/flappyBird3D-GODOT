@@ -4,7 +4,7 @@ Un flappybird en 3D diseñado con Godot Game Engine.
 Youtube con un video del juego:
 https://www.youtube.com/watch?v=l41K5WTbjQM
 
-itchio donde puedes jugarlo;
+Página de itchio donde puedes jugarlo en el navegador;
 https://kone9.itch.io/flappybird3d-godot
 
 <a href='https://drive.google.com/file/d/1vxn_DGH-kbzGJkzQVdQ8NBhWIcnD1xsT/view?usp=drive_open&amp;usp=embed_facebook&source=ctrlq.org'><img src='https://lh6.googleusercontent.com/CePLxyE0Fyz5Vq7emsQ0wF1_NdtduYL1i3ix2beQnaB-9j4HGci11yJ5NDg=w2400' /></a>
