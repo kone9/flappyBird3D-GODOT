@@ -13,3 +13,10 @@ https://kone9.itch.io/flappybird3d-godot
 <a href='https://drive.google.com/file/d/1CGJJwUCT0jt_jdoOb2ZFTD0E0VbC7hQR/view?usp=drive_open&amp;usp=embed_facebook&source=ctrlq.org'><img src='https://lh6.googleusercontent.com/uIAvhcC_T9E6iWXLfYODffYwOcDOA8e_ncflBzkxYW_qlmUrEs_NCBEH9iM=w2400' /></a>
 <a href='https://drive.google.com/file/d/1wPFU1TfYWLJmgmqBQRCXppVx37CI7Kul/view?usp=drive_open&amp;usp=embed_facebook&source=ctrlq.org'><img src='https://lh5.googleusercontent.com/iltSheBzrhupkD-YwNbgXVfLeITw8Jq4rgiTCwEjAZGYQ2_jzSU9P2pgYgk=w2400' /></a>
 <a href='https://drive.google.com/file/d/1lPH53iiSTZmi3459_X0x49koAz_NuU95/view?usp=drive_open&amp;usp=embed_facebook&source=ctrlq.org'><img src='https://lh4.googleusercontent.com/J1a9ZAbVaQYE-n5o-7O8gRXmRdTziJ4tNTJXzltM5E0io243foehVj9SXVg=w2400' /></a>
+
+Licencia:
+BSD: Berkeley Software Distribution – Es un tipo de licencia conocida por ser menos “restrictiva” lo que permite que desarrolladores puedan modificar, distribuir e incluso vender el software derivado, tiene las siguientes características:
+No es necesaria la atribución al autor
+El software puede venderse
+No es necesario liberar el código fuente
+Distintas versiones de una aplicación licenciada con BSD pueden tener otros tipos de licencias tanto libres como propietarias
